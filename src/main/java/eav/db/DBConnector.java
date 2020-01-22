@@ -1,15 +1,11 @@
 package eav.db;
 
-import eav.manager.AttrTypeManager;
-import eav.manager.AttributesManager;
 import eav.manager.ObjTypeManager;
-import eav.model.AttrType;
-import eav.model.Attribute;
+import eav.manager.ObjectManager;
 import eav.model.ObjType;
-import eav.names.ObjectTypeName;
+import eav.model.Object;
 
 import java.sql.Connection;
-import java.sql.Date;
 import java.sql.DriverManager;
 import java.sql.SQLException;
 
@@ -27,14 +23,20 @@ public class DBConnector {
             Connection connection = DriverManager.getConnection(DB_URL, USERNAME, PASSWORD);//соединениесБД
             System.out.println("Соединение с СУБД выполнено.");
 
-            ObjTypeManager objTypeManager = new ObjTypeManager(connection);
+            ObjectManager objectManager = new ObjectManager(connection);
+            Object object = new Object();
+            object.setObjectTypeId(1L);
+            object.setParentId(null);
+            objectManager.updateObjectById(object, 1L);
+
+            /*ObjTypeManager objTypeManager = new ObjTypeManager(connection);
             ObjType objType = new ObjType();
-            objType.setObjectTypeId(20L);
-            objType.setParentId(1L);
-            objType.setCode("new Code");
+            objType.setObjectTypeId(22L);
+            objType.setParentId(null);
+            objType.setCode("newCode0");
             objType.setName("Name");
             objType.setDescription("desc");
-            objTypeManager.createObjType(objType);
+            objTypeManager.createObjType(objType);*/
 
             /*AttrTypeManager attrTypeManager = new AttrTypeManager(connection);
             AttrType attrType = new AttrType();

@@ -1,7 +1,7 @@
 package eav.manager;
 
 import eav.model.ObjType;
-import eav.utils.ObjTpyteQueries;
+import eav.utils.ObjTypeQueries;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -17,9 +17,13 @@ public class ObjTypeManager {
 
     private Connection conn;
 
+    public ObjTypeManager(Connection conn) {
+        this.conn = conn;
+    }
+
     public void createObjType(ObjType objType) throws SQLException {
 
-        PreparedStatement preparedStmt = conn.prepareStatement(ObjTpyteQueries.INSERT_NEW_OBJECT_TYPE);
+        PreparedStatement preparedStmt = conn.prepareStatement(ObjTypeQueries.INSERT_NEW_OBJECT_TYPE);
         preparedStmt.setLong(1, objType.getObjectTypeId());
         preparedStmt.setLong(2, objType.getParentId());
         preparedStmt.setString(3, objType.getCode());

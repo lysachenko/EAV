@@ -77,11 +77,10 @@ public class AttributesManager {
     public void updateAttributeByObjectIdAndAttrId(Attribute attribute, Long objectId, Long attrId) throws SQLException {
         PreparedStatement preparedStatement = connection.prepareStatement(AttributeQueries.UPDATE_ATTRIBUTE_BY_OBJECT_ID_AND_ATTR_ID);
         preparedStatement.setLong(1, attribute.getObjectId());
-        preparedStatement.setLong(2, attribute.getAttributeTypeId());
-        preparedStatement.setString(3, attribute.getValue());
-        preparedStatement.setDate(4, attribute.getDate());
-        preparedStatement.setLong(5, objectId);
-        preparedStatement.setLong(6, attrId);
+        preparedStatement.setString(2, attribute.getValue());
+        preparedStatement.setDate(3, attribute.getDate());
+        preparedStatement.setLong(4, objectId);
+        preparedStatement.setLong(5, attrId);
         preparedStatement.execute();
 
         connection.close();

@@ -1,6 +1,6 @@
 package eav.utils;
 
-public class ObjTpyteQueries {
+public class ObjTypeQueries {
 
     public static final String INSERT_NEW_OBJECT_TYPE =
             "INSERT INTO objtype(OBJECT_TYPE_ID, PARENT_ID, CODE, NAME, DESCRIPTION) VALUES(?, ?, ?, ?, ?)";
