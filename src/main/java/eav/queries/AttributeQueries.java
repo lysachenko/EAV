@@ -1,4 +1,4 @@
-package eav.utils;
+package eav.queries;
 
 public class AttributeQueries {
 

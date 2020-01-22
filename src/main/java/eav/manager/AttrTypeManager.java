@@ -1,7 +1,7 @@
 package eav.manager;
 
 import eav.model.AttrType;
-import eav.utils.AttrTypeQueries;
+import eav.queries.AttrTypeQueries;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;

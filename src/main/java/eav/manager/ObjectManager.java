@@ -1,7 +1,7 @@
 package eav.manager;
 
 import eav.model.Object;
-import eav.utils.ObjectQueries;
+import eav.queries.ObjectQueries;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
