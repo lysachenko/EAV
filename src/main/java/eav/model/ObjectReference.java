@@ -29,4 +29,13 @@ public class ObjectReference {
     public void setObjectId(Long objectId) {
         this.objectId = objectId;
     }
+
+    @Override
+    public String toString() {
+        return "\n\tObjectReference{" +
+                "attrId=" + attrId +
+                ", reference=" + reference +
+                ", objectId=" + objectId +
+                '}';
+    }
 }

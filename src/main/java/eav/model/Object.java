@@ -1,5 +1,7 @@
 package eav.model;
 
+import java.util.List;
+
 public class Object {
 
     private Long objectId;
@@ -7,6 +9,9 @@ public class Object {
     private Long objectTypeId;
     private String name;
     private String description;
+
+    private List<Attribute> attributes;
+    private List<ObjectReference> objectReferences;
 
     public Long getObjectId() {
         return objectId;
@@ -46,5 +51,34 @@ public class Object {
 
     public void setDescription(String description) {
         this.description = description;
+    }
+
+    public List<Attribute> getAttributes() {
+        return attributes;
+    }
+
+    public void setAttributes(List<Attribute> attributes) {
+        this.attributes = attributes;
+    }
+
+    public List<ObjectReference> getObjectReferences() {
+        return objectReferences;
+    }
+
+    public void setObjectReferences(List<ObjectReference> objectReferences) {
+        this.objectReferences = objectReferences;
+    }
+
+    @Override
+    public String toString() {
+        return "\nObject{" +
+                "objectId=" + objectId +
+                ", parentId=" + parentId +
+                ", objectTypeId=" + objectTypeId +
+                ", name='" + name + '\'' +
+                ", description='" + description + '\'' +
+                ", \nattributes=" + attributes +
+                ", \nobjectReferences=" + objectReferences +
+                "}";
     }
 }

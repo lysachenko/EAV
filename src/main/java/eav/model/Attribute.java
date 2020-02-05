@@ -41,4 +41,13 @@ public class Attribute {
         this.date = date;
     }
 
+    @Override
+    public String toString() {
+        return "\n\tAttribute{" +
+                "attributeTypeId=" + attributeTypeId +
+                ", objectId=" + objectId +
+                ", value='" + value + '\'' +
+                ", date=" + date +
+                '}';
+    }
 }
